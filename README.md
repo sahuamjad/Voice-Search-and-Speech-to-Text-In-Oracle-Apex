@@ -38,3 +38,18 @@ Speech converted to Text
   │
   ▼
 Text added to APEX Page Item
+## Code
+function startSpeechRecognition() {
+    var recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+
+    recognition.onresult = function(event) {
+        var result = event.results[0][0].transcript;
+        var existingText = document.getElementById('P5_TEXT').value;
+
+        document.getElementById('P5_TEXT').value =
+            existingText + " " + result;
+    };
+
+    recognition.start();
+}
