@@ -1,4 +1,3 @@
-
 # 🎤 Oracle APEX Voice Input / Speech-to-Text
 
 ## 📌 Overview
@@ -15,7 +14,9 @@ This is a simple and practical example of integrating **JavaScript and browser-b
 
 The main objective of this implementation is to allow users to enter text into an Oracle APEX application using their voice instead of typing manually.
 
-### Basic Workflow
+---
+
+## 🔄 Basic Workflow
 
 ```text
 User
@@ -37,15 +38,3 @@ Speech converted to Text
   │
   ▼
 Text added to APEX Page Item
-function startSpeechRecognition() {
-    var recognition = new webkitSpeechRecognition();
-    recognition.lang = 'en-US';
-### Java script code page Level
-    recognition.onresult = function(event) {
-        var result = event.results[0][0].transcript;
-        var existingText = document.getElementById('P5_TEXT').value;
-        document.getElementById('P5_TEXT').value = existingText + " " + result;
-    };
-
-    recognition.start();
-}
